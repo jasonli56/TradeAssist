@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading Backtesting Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Trading Backtesting Platform</h1>
+    <form action="{{ url_for('backtest') }}" method="post">
+        <label for="overbought">Overbought:</label>
+        <input type="text" name="overbought" id="overbought" required>
+        <label for="oversold">Oversold:</label>
+        <input type="text" name="oversold" id="oversold" required>
+        <label for="dayAverage">dayAverage:</label>
+        <input type="text" name="dayAverage" id="dayAverage" required>
+        <label for="function">Function:</label>
+        <select name="function" id="function" required>
+            <option value="DIGITAL_CURRENCY_DAILY">Digital Currency Daily</option>
+            <option value="TIME_SERIES_DAILY">Time Series Daily</option>
+        </select>
+        <label for="symbol">symbol:</label>
+        <input type="text" name="symbol" id="symbol" required>
+
+        <button type="submit">Backtest</button>
+    </form>
+</body>
+</html>
